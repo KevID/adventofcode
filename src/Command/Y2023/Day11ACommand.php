@@ -83,6 +83,12 @@ class Day11ACommand extends Command
         return $newGrid;
     }
     
+    /**
+     * Expands the grid.
+     * Si une ligne ou une colonne ne possède pas de galaxie représentée par le symbole #, on dédouble la ligne ou la colonne.
+     * @param array<int, array<int, string>> $grid The grid to expand.
+     * @return array<int, array<int, string>> Returns the expanded grid.
+     */
     private function expandLineGrid(array $grid): array
     {
         $newGrid = [];
@@ -116,7 +122,11 @@ class Day11ACommand extends Command
         return $return_array;
     }
     
-    
+    /**
+     * Prints the grid.
+     * @param array<int, array<int, string>> $grid The grid to print.
+     * @param SymfonyStyle $io The SymfonyStyle object.
+     */
     private function printGrid(array $grid, SymfonyStyle $io): void
     {
         foreach ($grid as $row) {
@@ -127,10 +137,10 @@ class Day11ACommand extends Command
         }
     }
     
-    /*
+    /**
      * Recherche des galaxies
      * @param array<int, array<int, string>> $grid The grid to search in.
-     * @return array<int, array<int, string>> Returns the expanded grid.
+     * @return array<array<string, int>> Returns the expanded grid.
      */
     private function searchGalaxies(array $grid): array
     {
@@ -150,7 +160,12 @@ class Day11ACommand extends Command
         return $galaxies;
     }
     
-    // Calculer la distance entre deux galaxies en prenant en compte les diagonales
+    /**
+     * Calculer la distance entre deux galaxies
+     * @param array<string, int> $galaxy1 The first galaxy.
+     * @param array<string, int> $galaxy2 The second galaxy.
+     * @return int Returns the distance between the two galaxies.
+     */
     private function calculateDistance(array $galaxy1, array $galaxy2): int
     {
         $distance = 0;
@@ -160,7 +175,11 @@ class Day11ACommand extends Command
         return $distance;
     }
     
-    // Calculer la somme des distances de toutes les paires de galaxies
+    /**
+     * Calculer la somme des distances entre toutes les galaxies
+     * @param array<array<string, int>> $galaxies The galaxies.
+     * @return int Returns the sum of all distances.
+     */
     private function calculateSumDistances(array $galaxies): int
     {
         $sumDistances = 0;
