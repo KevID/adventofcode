@@ -1,9 +1,13 @@
 # Projet Advent of Code avec Symfony
 
 ## Introduction
-Ce projet est une implémentation en Symfony des défis quotidiens proposés par [Advent of Code](https://adventofcode.com/). Chaque jour, un nouveau problème (en 2 parties) est résolu en utilisant les fonctionnalités et les avantages du framework Symfony.
+
+Ce projet est une implémentation en Symfony des défis quotidiens proposés
+par [Advent of Code](https://adventofcode.com/). Chaque jour, un nouveau problème (en 2 parties) est résolu en utilisant
+les fonctionnalités et les avantages du framework Symfony.
 
 ## Installation
+
 1. **Cloner le Répertoire**
    ```
    git clone adventofcode
@@ -16,7 +20,8 @@ Ce projet est une implémentation en Symfony des défis quotidiens proposés par
    ```
 
 3. **Configuration de l'Environnement**
-    - Configurer le fichier `.env` ou `.env.local` avec les paramètres nécessaires (base de données, variables d'environnement spécifiques, etc.).
+    - Configurer le fichier `.env` ou `.env.local` avec les paramètres nécessaires (base de données, variables
+      d'environnement spécifiques, etc.).
 
 
 4. **Démarrer le Serveur**
@@ -25,23 +30,30 @@ Ce projet est une implémentation en Symfony des défis quotidiens proposés par
    ```
 
 ## Utilisation
+
 - Pour exécuter une solution pour un jour spécifique, utilisez la commande Symfony appropriée. Par exemple :
   ```
   // symfony console app:YYYY:DD:(A|B)
   symfony console app:2023:01:A
   ```
-  
+
+- Pour lancer l'analyse de code statique, utilisez la commande suivante :
+  ```
+  vendor/bin/phpstan analyse -l max src
+  ```
+
 ## Structure du Projet
+
 - **import/**: Fichiers d'importation de données, si nécessaire.
 - **src/**
     - **Command/**: Contient les commandes Symfony pour exécuter les solutions.
     - **Service/**: Services utilisés pour les logiques de résolution des problèmes.
 
-
 ## Crédits
+
 - Développé par [Votre Nom].
 - [Advent of Code](https://adventofcode.com/) pour les défis quotidiens.
 
-
 ## Licence
+
 [MIT](https://choosealicense.com/licenses/mit/)
